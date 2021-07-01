@@ -109,11 +109,38 @@ button:disabled {
 }
 
 
+.scrolled{
+  max-height:80vh ;
+  overflow:scroll;
+  
+  overflow-x: auto;
+}
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #282535; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #282535; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #282535; 
+}
 
 ul, li {
   text-align: left;
   list-style: none;
+
 }
 
 p {

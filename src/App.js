@@ -30,8 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-      <SingOut /></header>
+      <header> <SingOut /></header>
       <section>{user ? <ChatRoom /> : <SingIn />}</section>
     </div>
   );
@@ -55,7 +54,7 @@ function App() {
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
     }
     const messagesRef= firestore.collection('messages');
-    const query=messagesRef.orderBy('createdAt').limit(25);
+    const query=messagesRef.orderBy('createdAt').limit(100);
 
     const [messages] = useCollectionData(query,{idField:'id'});
 
@@ -78,10 +77,9 @@ function App() {
 
       setFormValue('');
     }
-    const dummy=useRef()
     return (
       <>
-      <div>
+      <div className="scrolled">
         {messages && messages.map(msg =><ChatMessage key={msg.id} message={msg} />)}
       <div ref={messagesEndRef}></div>
       </div>
